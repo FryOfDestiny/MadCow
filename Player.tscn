@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dbsf7dfgvlklu"]
+
+[ext_resource type="Script" uid="uid://dhhqy3mdhsup8" path="res://Scripts/player_movement.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://buy14onrf5hpn" path="res://Sprites/FarmerCharacter/FarmerCharacterSpriteSheet1.png" id="2_kpjcp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpjcp"]
+radius = 7.0
+height = 28.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=843959330]
+script = ExtResource("1_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1047318140]
+shape = SubResource("CapsuleShape2D_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1183186878]
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("2_kpjcp")
+hframes = 3
+vframes = 3
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1817981316]
+scale = Vector2(0.81133157, 0.9124515)
+limit_left = -2
+limit_top = -2
+limit_right = 1280
+limit_bottom = 752
+rotation_smoothing_enabled = true
