@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbsf7dfgvlklu"]
 
-[ext_resource type="Script" uid="uid://dhhqy3mdhsup8" path="res://Scripts/player_movement.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://dhhqy3mdhsup8" path="res://player_movement.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://buy14onrf5hpn" path="res://Sprites/FarmerCharacter/FarmerCharacterSpriteSheet1.png" id="2_kpjcp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpjcp"]
