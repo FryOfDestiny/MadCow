@@ -14,10 +14,14 @@ script = ExtResource("1_kpjcp")
 shape = SubResource("CapsuleShape2D_kpjcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1183186878]
-scale = Vector2(0.59375, 0.59375)
+texture_filter = 3
+position = Vector2(4.7683716e-07, -0.99999905)
+scale = Vector2(0.859375, 0.859375)
 texture = ExtResource("2_kpjcp")
 hframes = 3
 vframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 96.982666, 101.5538)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1817981316]
 scale = Vector2(0.81133157, 0.9124515)

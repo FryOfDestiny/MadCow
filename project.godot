@@ -15,6 +15,10 @@ run/main_scene="uid://pln2g6ko65xh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/borderless=true
+
 [input]
 
 left={
