@@ -20,6 +20,12 @@ var buffer = 32
 #animation onready
 @onready var animator = $AnimatedSprite2D
 
+#health bar
+@export var maxHealth = 100
+@onready var currentHealth: int = maxHealth
+signal healthChanged
+#use healthChanged.emit whenever player takes damage to update healthbar.
+
 func _ready():
 	if tile_layer == null:
 		return
