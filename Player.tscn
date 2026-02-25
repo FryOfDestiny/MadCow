@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://buy14onrf5hpn" path="res://Sprites/FarmerCharacter/FarmerCharacterSpriteSheet1.png" id="2_kpjcp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpjcp"]
-radius = 7.0
+radius = 6.0
 height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpjcp"]
@@ -101,6 +101,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=843959330]
+z_index = 1
 script = ExtResource("1_kpjcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1047318140]
@@ -110,7 +111,6 @@ shape = SubResource("CapsuleShape2D_kpjcp")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_l6ohk")
 animation = &"Walk_Away"
-frame_progress = 0.44561753
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1817981316]
 scale = Vector2(0.81133157, 0.9124515)
