@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="MadCow"
-run/main_scene="uid://pln2g6ko65xh"
+run/main_scene="uid://bygqas6fa4tal"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/borderless=true
+
+[global_group]
+
+player=""
 
 [input]
 

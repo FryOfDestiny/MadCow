@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://udhawi0i6f4e" path="res://Sprites/ProgressBarSprites/HealthBarUnder.png" id="3_fos0i"]
 [ext_resource type="Texture2D" uid="uid://doem2fjbyc0af" path="res://Sprites/ProgressBarSprites/HealthBarOver.png" id="4_3dxm6"]
 [ext_resource type="Script" uid="uid://3ad73krju8p" path="res://Scripts/gui/healthBar.gd" id="5_lgr22"]
+[ext_resource type="PackedScene" uid="uid://bnj8ml50l1ycv" path="res://Enemy.tscn" id="7_lgr22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxm6"]
 texture = ExtResource("1_fos0i")
@@ -69,7 +70,7 @@ texture_filter = 3
 tile_map_data = PackedByteArray("AAAPAA0AAAACAAAAAAAPAA4AAAACAAEAAAAPAA8AAAACAAIAAAAPABAAAAACAAMAAAAQAA0AAAADAAAAAAAQAA4AAAADAAEAAAAQAA8AAAADAAIAAAAQABAAAAADAAMAAABDACAAAAACAAAAAABDACEAAAACAAEAAABDACIAAAACAAIAAABDACMAAAACAAMAAABEACAAAAADAAAAAABEACEAAAADAAEAAABEACIAAAADAAIAAABEACMAAAADAAMAAAASACEAAAACAAAAAAASACIAAAACAAEAAAASACMAAAACAAIAAAASACQAAAACAAMAAAATACEAAAADAAAAAAATACIAAAADAAEAAAATACMAAAADAAIAAAATACQAAAADAAMAAAA2AAMAAAACAAAAAAA2AAQAAAACAAEAAAA2AAUAAAACAAIAAAA2AAYAAAACAAMAAAA3AAMAAAADAAAAAAA3AAQAAAADAAEAAAA3AAUAAAADAAIAAAA3AAYAAAADAAMAAAAhABoAAAAAAAIAAAAhABsAAAAAAAMAAAAiABoAAAABAAIAAAAiABsAAAABAAMAAAAzAA0AAAAAAAIAAAAzAA4AAAAAAAMAAAA0AA0AAAABAAIAAAA0AA4AAAABAAMAAAAyAA0AAAAAAAIAAAAyAA4AAAAAAAMAAAA1AA0AAAABAAIAAAA1AA4AAAABAAMAAAAdAAcAAAAAAAIAAAAdAAgAAAAAAAMAAAAeAAcAAAABAAIAAAAeAAgAAAABAAMAAAA=")
 tile_set = ExtResource("2_3dxm6")
 
-[node name="Player" parent="." unique_id=727468827 instance=ExtResource("1_glv2v")]
+[node name="Player" parent="." unique_id=727468827 groups=["player"] instance=ExtResource("1_glv2v")]
 position = Vector2(576, 326)
 scale = Vector2(1.3599999, 1.1724088)
 
@@ -137,3 +138,15 @@ texture_under = ExtResource("3_fos0i")
 texture_progress = ExtResource("4_3dxm6")
 script = ExtResource("5_lgr22")
 player = NodePath("../../Player")
+
+[node name="Chicken1" parent="." unique_id=723109850 instance=ExtResource("7_lgr22")]
+position = Vector2(235, 433)
+
+[node name="CharacterBody2D" parent="." unique_id=427426504 instance=ExtResource("7_lgr22")]
+position = Vector2(473, 478)
+
+[node name="CharacterBody2D2" parent="." unique_id=694747818 instance=ExtResource("7_lgr22")]
+position = Vector2(214, 496)
+
+[node name="CharacterBody2D3" parent="." unique_id=1437352778 instance=ExtResource("7_lgr22")]
+position = Vector2(332, 391)

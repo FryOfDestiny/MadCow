@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b80aukyy27j1y" path="res://Scripts/Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://buy14onrf5hpn" path="res://Sprites/FarmerCharacter/FarmerCharacterSpriteSheet1.png" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://bdahw0rmu7nw8" path="res://Scripts/stats.gd" id="3_kne1u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpjcp"]
 radius = 6.0
@@ -100,7 +101,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=843959330]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=843959330 groups=["player"]]
 z_index = 1
 script = ExtResource("1_kpjcp")
 
@@ -119,3 +120,6 @@ limit_top = -2
 limit_right = 1280
 limit_bottom = 752
 rotation_smoothing_enabled = true
+
+[node name="Stats" type="Node2D" parent="." unique_id=1324606239]
+script = ExtResource("3_kne1u")
