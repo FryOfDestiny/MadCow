@@ -134,6 +134,7 @@ shape = SubResource("RectangleShape2D_lgr22")
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1009594540]
 offset_right = 40.0
 offset_bottom = 40.0
+fill_mode = 3
 texture_under = ExtResource("3_fos0i")
 texture_progress = ExtResource("4_3dxm6")
 script = ExtResource("5_lgr22")
