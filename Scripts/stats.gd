@@ -1,10 +1,10 @@
 extends Node
 class_name Stats
 
-signal health_changed(current, max)
+signal health_changed()
 signal died
 signal level_up(new_level)
-signal experience_changed(current, required)
+signal experience_changed()
 
 var max_health : int = 100
 var current_health : int
@@ -18,15 +18,14 @@ var experience_required : int = 100
 
 func _ready():
 	current_health = max_health
-	emit_signal("health_changed", current_health, max_health)
+	emit_signal("health_changed")
 
 
 func take_damage(amount: int):
 	var reduced = max(amount - defense, 0)
 	current_health -= reduced
 	current_health = max(current_health, 0)
-
-	emit_signal("health_changed", current_health, max_health)
+	emit_signal("health_changed")
 
 	if current_health <= 0:
 		emit_signal("died")
@@ -36,12 +35,12 @@ func heal(amount: int):
 	current_health += amount
 	current_health = min(current_health, max_health)
 
-	emit_signal("health_changed", current_health, max_health)
+	emit_signal("health_changed")
 
 
 func add_experience(amount: int):
 	experience += amount
-	emit_signal("experience_changed", experience, experience_required)
+	emit_signal("experience_changed")
 
 	while experience >= experience_required:
 		experience -= experience_required
@@ -59,5 +58,5 @@ func increase_level():
 	current_health = max_health
 
 	emit_signal("level_up", level)
-	emit_signal("health_changed", current_health, max_health)
-	emit_signal("experience_changed", experience, experience_required)
+	emit_signal("health_changed")
+	emit_signal("experience_changed")
