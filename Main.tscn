@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://udhawi0i6f4e" path="res://Sprites/ProgressBarSprites/HealthBarUnder.png" id="3_fos0i"]
 [ext_resource type="Texture2D" uid="uid://doem2fjbyc0af" path="res://Sprites/ProgressBarSprites/HealthBarOver.png" id="4_3dxm6"]
 [ext_resource type="Script" uid="uid://3ad73krju8p" path="res://Scripts/gui/healthBar.gd" id="5_lgr22"]
+[ext_resource type="Texture2D" uid="uid://8bpfu0yryy87" path="res://Sprites/ProgressBarSprites/ExperienceBarOver.png" id="7_03owx"]
 [ext_resource type="PackedScene" uid="uid://bnj8ml50l1ycv" path="res://Enemy.tscn" id="7_lgr22"]
+[ext_resource type="Script" uid="uid://ba70w5ljj8cyv" path="res://experience_bar.gd" id="8_wkp8b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxm6"]
 texture = ExtResource("1_fos0i")
@@ -131,13 +133,23 @@ shape = SubResource("RectangleShape2D_lgr22")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1949278467]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1009594540]
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1009594540]
 offset_right = 40.0
 offset_bottom = 40.0
 fill_mode = 3
 texture_under = ExtResource("3_fos0i")
 texture_progress = ExtResource("4_3dxm6")
 script = ExtResource("5_lgr22")
+
+[node name="ExperienceBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1009998318]
+offset_left = 22.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 65.0
+fill_mode = 3
+texture_under = ExtResource("3_fos0i")
+texture_progress = ExtResource("7_03owx")
+script = ExtResource("8_wkp8b")
 
 [node name="Chicken1" parent="." unique_id=723109850 instance=ExtResource("7_lgr22")]
 position = Vector2(235, 433)

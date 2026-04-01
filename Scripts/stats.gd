@@ -4,7 +4,7 @@ class_name Stats
 signal health_changed()
 signal died
 signal level_up(new_level)
-signal experience_changed(current, required)
+signal experience_changed()
 
 var max_health : int = 100
 var current_health : int
@@ -40,7 +40,7 @@ func heal(amount: int):
 
 func add_experience(amount: int):
 	experience += amount
-	emit_signal("experience_changed", experience, experience_required)
+	emit_signal("experience_changed")
 
 	while experience >= experience_required:
 		experience -= experience_required
@@ -58,5 +58,5 @@ func increase_level():
 	current_health = max_health
 
 	emit_signal("level_up", level)
-	emit_signal("health_changed", current_health, max_health)
-	emit_signal("experience_changed", experience, experience_required)
+	emit_signal("health_changed")
+	emit_signal("experience_changed")

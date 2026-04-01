@@ -24,7 +24,8 @@ var buffer = 32
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 @onready var stats = $Stats
-@onready var health_bar = $"../CanvasLayer/TextureProgressBar"
+@onready var health_bar = $"../CanvasLayer/HealthBar"
+@onready var experience_bar = $"../CanvasLayer/ExperienceBar"
 
 func _ready():
 	health_bar.set_stats(stats)
