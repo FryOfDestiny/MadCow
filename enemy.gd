@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 50.0
+@export var health = 30
 var player = null
 
 func _ready():
@@ -24,6 +25,19 @@ func _physics_process(_delta):
 		print("I can't find the player! Check your groups.")
 		# Search again just in case the player spawned late
 		player = get_tree().get_first_node_in_group("player")
+
+func take_damage(amount: int):
+	health -= amount
+	print("Enemy hit! Health remaining: ", health)
+	
+	# Visual feedback (flashes red)
+	modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE
+	
+	if health <= 0:
+		print("Enemy defeated!")
+		queue_free()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
