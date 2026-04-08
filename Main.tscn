@@ -78,7 +78,7 @@ tile_map_data = PackedByteArray("AAAPAA0AAAACAAAAAAAPAA4AAAACAAEAAAAPAA8AAAACAAI
 tile_set = ExtResource("2_3dxm6")
 
 [node name="Player" parent="." unique_id=727468827 instance=ExtResource("1_glv2v")]
-position = Vector2(576, 326)
+position = Vector2(581, 319)
 scale = Vector2(1.3599999, 1.1724088)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1822146046]
