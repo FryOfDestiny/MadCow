@@ -32,6 +32,7 @@ var buffer = 32
 @export var fire_rate : float = 1.5 # Time in seconds between shots
 var can_shoot : bool = true
 func _ready():
+
 	health_bar.set_stats(stats)
 	if tile_layer == null:
 		return
