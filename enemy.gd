@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-
+@export var xp_value: int = 10
 @export var speed = 50.0
 @export var health = 10
+
+var xp_drop_scene = preload("res://XP.tscn")
+
 var player = null
 
 func _ready():
@@ -37,8 +40,18 @@ func take_damage(amount: int):
 	
 	if health <= 0:
 		print("Enemy defeated!")
+		spawn_xp()
 		queue_free()
 
+func spawn_xp():
+	var drop = xp_drop_scene.instantiate()
+	# Add to the root or parent scene so it stays when enemy is deleted
+	get_parent().add_child(drop) 
+	drop.global_position = global_position
+	
+	# If your XP_drop script has an 'xp_amount' variable, set it here
+	if "xp_amount" in drop:
+		drop.xp_amount = xp_value
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
