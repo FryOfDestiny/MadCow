@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var xp_value: int = 10
 @export var speed = 50.0
-@export var health = 10
+@export var health = 20
 
 var xp_drop_scene = preload("res://XP.tscn")
 

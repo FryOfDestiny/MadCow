@@ -6,6 +6,8 @@ class_name Player
 @export var tile_layer : TileMapLayer
 @export var bullet_scene : PackedScene
 
+@export var fire_rate : float = 0.5 # Seconds between shots
+var can_shoot : bool = true
 
 var min_x = 0
 var min_y = 0
@@ -41,25 +43,26 @@ func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 	
-	# NEW: Shooting logic
-	if Input.is_action_just_pressed("fire"): # Or "shoot" if you defined it
+
+	if Input.is_action_pressed("fire") and can_shoot: 
 		shoot()
 		
 func shoot():
 	if bullet_scene:
+
+		can_shoot = false
+		
 		var bullet = bullet_scene.instantiate()
-		
-		# Use global_position to avoid math errors if player is parented to something else
 		bullet.global_position = global_position
-		
-		# Make it face the mouse so it actually has a direction to fly in
 		bullet.look_at(get_global_mouse_position())
-		
-		#pass player damage into bullet
 		bullet.damage = stats.damage
-		
-		# Add it to the level so it moves independently of the player
 		get_parent().add_child(bullet)
+		
+
+		await get_tree().create_timer(fire_rate).timeout
+		
+
+		can_shoot = true
 	else:
 		print("Don't forget to drag the bullet.tscn into the Inspector!")
 	
@@ -70,11 +73,6 @@ func _physics_process(_delta: float):
 	#Map wrapping logic
 	position.x = wrapf(position.x, min_x - buffer, max_x + buffer)
 	position.y = wrapf(position.y, min_y - buffer, max_y + buffer)
-
-#Debug test to level up
-#func _process(delta):
-	#if Input.is_action_just_pressed("ui_accept"):
-		#stats.increase_level()
 
 func _on_level_up(new_level):
 	get_tree().paused = true
