@@ -70,6 +70,10 @@ func _physics_process(_delta: float):
 	get_input()
 	move_and_slide()
 	
+
+	if stats.current_health <= 0:
+		get_tree().change_scene_to_file("res://MainMenu.tscn")
+	
 	#Map wrapping logic
 	position.x = wrapf(position.x, min_x - buffer, max_x + buffer)
 	position.y = wrapf(position.y, min_y - buffer, max_y + buffer)
