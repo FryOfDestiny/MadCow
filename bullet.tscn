@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2er2eq7ce2uo" path="res://Sprites/FarmerCharacter/Bullet.png" id="2_v8qja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b2rl"]
-radius = 2.0
+radius = 3.0
 
 [node name="Area2D" type="Area2D" unique_id=2060107874]
 z_index = 1
